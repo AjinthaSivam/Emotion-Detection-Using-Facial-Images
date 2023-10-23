@@ -13,7 +13,7 @@ x_test = x_test.astype('float32') / 255
 
 # Define CNN model
 model = models.Sequential()
-model.add(layers.Conv2D(32, (3, 3), activation='relu', input_shape=(50, 50, 3)))
+model.add(layers.Conv2D(32, (3, 3), activation='relu', input_shape=(48, 48, 3)))
 model.add(layers.MaxPooling2D((2, 2)))
 model.add(layers.Conv2D(64, (3, 3), activation='relu'))
 model.add(layers.MaxPooling2D((2, 2)))
@@ -28,7 +28,7 @@ model.compile(optimizer='adam',
               metrics=['accuracy'])
 
 # Train the model
-history = model.fit(x_train, y_train, epochs=100, validation_data=(x_test, y_test))
+history = model.fit(x_train, y_train, epochs=60, validation_data=(x_test, y_test))
 
 # Plot training history
 plt.plot(history.history['accuracy'], label='accuracy')

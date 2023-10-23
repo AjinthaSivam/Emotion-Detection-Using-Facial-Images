@@ -5,9 +5,9 @@ import numpy as np
 import tensorflow as tf
 
 # Load a test image
-imag = cv2.imread(os.getcwd() + '/CNN/data/test/sad/PrivateTest_3594279.jpg')
+imag = cv2.imread(os.getcwd() + '/CNN/data/test/sad/PrivateTest_7622844.jpg')
 img_from_ar = Image.fromarray(imag, 'RGB')
-resized_image = img_from_ar.resize((50, 50))
+resized_image = img_from_ar.resize((48, 48))
 
 # Prepare the test image for prediction
 test_image = np.expand_dims(np.array(resized_image), axis=0)
